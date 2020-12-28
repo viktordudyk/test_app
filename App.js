@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     color: 'white',
-    fontSize: 20
+    fontSize: 21
   },
   startText: {
     padding: 10,
