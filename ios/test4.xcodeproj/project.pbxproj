@@ -128,11 +128,13 @@
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
+				8334C3A57AB9B5AD876DAE9B /* [CP] Prepare Artifacts */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
+				B865ED0F054AE1DA6D4D2D95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +245,43 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test4/Pods-test4-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8334C3A57AB9B5AD876DAE9B /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test4/Pods-test4-artifacts.sh",
+				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenterAnalytics.xcframework",
+				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenter.xcframework",
+				"${PODS_ROOT}/AppCenter/AppCenter-SDK-Apple/AppCenterCrashes.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test4/Pods-test4-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B865ED0F054AE1DA6D4D2D95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-test4/Pods-test4-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-test4/Pods-test4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = test4/test4.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -310,13 +350,11 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test4;
 				PRODUCT_NAME = test4;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
-				TARGETED_DEVICE_FAMILY = 1;
-				CODE_SIGN_ENTITLEMENTS = C:\Users\viktor.dudyk\Desktop\HouseId\source\houseid-text-recognition\test4\ios\test4\test4.entitlements;
 			};
 			name = Debug;
 		};
@@ -326,6 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = test4/test4.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = test4/Info.plist;
@@ -336,12 +375,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test4;
 				PRODUCT_NAME = test4;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
-				TARGETED_DEVICE_FAMILY = 1;
-				CODE_SIGN_ENTITLEMENTS = C:\Users\viktor.dudyk\Desktop\HouseId\source\houseid-text-recognition\test4\ios\test4\test4.entitlements;
 			};
 			name = Release;
 		};
@@ -373,6 +410,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = test4/test4.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -401,8 +439,9 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test4;
+				PRODUCT_NAME = test4;
 				SDKROOT = iphoneos;
-				CODE_SIGN_ENTITLEMENTS = C:\Users\viktor.dudyk\Desktop\HouseId\source\houseid-text-recognition\test4\ios\test4\test4.entitlements;
 			};
 			name = Debug;
 		};
@@ -434,6 +473,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = test4/test4.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -454,9 +494,10 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test4;
+				PRODUCT_NAME = test4;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				CODE_SIGN_ENTITLEMENTS = C:\Users\viktor.dudyk\Desktop\HouseId\source\houseid-text-recognition\test4\ios\test4\test4.entitlements;
 			};
 			name = Release;
 		};
